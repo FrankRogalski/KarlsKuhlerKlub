@@ -12,14 +12,16 @@ spec.num_hidden_units = 100 // number of neurons in hidden layer
 let env = {};
 
 env.getNumStates = () => 3;
-env.getMaxNumActions = () => 3;
+env.getMaxNumActions = () => 4;
 
 let agent = new RL.DQNAgent(env, spec);
 
 let first = false;
+let second = false;
+
 let einzellerListe = [];
 window.setInterval(() => {
-    let s = [Einzeller, Insekten, insektPrice]
+    let s = [Einzeller, Fruchtfliegen, Fliegen]
     let action = agent.act(s);
 
     einzellerListe.push(Einzeller);
@@ -32,14 +34,22 @@ window.setInterval(() => {
             addEinzeller();
             break;
         case 1:
-            addInsekt();
+            addFruchtfliege();
             break;
         case 2:
+            addFliege();
+            break;
+        case 3:
             if (!first) {
                 buySimplyCellDivision();
                 first = true;
             }
             break;
+        case 4:
+            if(!second){
+                buyNormalCellDivision();
+                second = true;
+            }
     }
 
     console.log(action);

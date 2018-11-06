@@ -5,20 +5,37 @@
         <title>Mutiertekatzenmädchen</title>  
     </head>
     <body id="body">
-        <div id="Einzeller-Kontainer">
+        <div id="stats">
+            <div>
+                <span>Bonus pro Sekunde: </span>
+                <span id="bonusPercent">0.00%</span>
+            </div>
+            <div>
+                <span>Einzeller pro Sekunde (ohne Bonus): </span>
+                <span id="einzellerPerSecond">0</span>
+            </div>
+        </div>
+
+        <div id="Einzeller-Container">
             <span id="lblEinzeller">Genmanipulierte Einzeller: </span>
-            <span id="Einzeller">0</span>
+            <span id="Einzeller">0.00</span>
             <input type="button" id="btnAddEinzeller" value="Create" onclick="addEinzeller()" />
         </div>
 
-        <div id="Insekten-Kontainer">
-                <span id="lblInsekt">Genmanipulierte Insekten: </span>
-                <span id="Insekt">0</span>
-                <input type="button" id="btnAddInsekt" value="Verbinde Einzeller (50)" onclick="addInsekt()" />
+        <div id="Fruchtfliegen-Container">
+            <span id="lblFruchtfliege">Genmanipulierte Fruchtfliegen: </span>
+            <span id="Fruchtfliege">0</span>
+            <input type="button" id="btnAddFruchtfliege" value="Verbinde Einzeller (50)" onclick="addFruchtfliege()" />
+        </div>
+
+        <div id="Fliegen-Container">
+            <span id="lblFliege">Genmanipulierte Fliegen: </span>
+            <span id="Fliege">0</span>
+            <input type="button" id="btnAddFliege" value="Verbinde Einzeller (200)" onclick="addFliege()" />
         </div>
 
         <div id="Upgrades">
-            <input type="button" id="btnBuySimplyCellDivision" value="Simply celldivision (1%)" onclick="buySimplyCellDivision()" />
+            <input type="button" id="btnBuySimplyCellDivision" value="Simply celldivision (+1% bonus, 500)" onclick="buySimplyCellDivision()" />
         </div>
     </body>
     <script src="main.js"></script>

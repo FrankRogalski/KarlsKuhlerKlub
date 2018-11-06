@@ -1,9 +1,11 @@
 # Input
-* Insekten price
 * Anzahl Einzeller
-* Anzahl Insekten
+* Anzahl Fruchtgliegen
+* Anzahl Fliegen
 
 # Output
 * Button - Simply Celldevision
+* Button - Normal Celldivision
 * Button - Create Einzeller
-* Button - Create Insekt
+* Button - Create Fruchtfliege
+* Button - Create Fliege
