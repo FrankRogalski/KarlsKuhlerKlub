@@ -7,12 +7,12 @@ spec.experience_add_every = 10; // number of time steps before we add another ex
 spec.experience_size = 5000; // size of experience replay memory
 spec.learning_steps_per_iteration = 20;
 spec.tderror_clamp = 1.0; // for robustness
-spec.num_hidden_units = 100 // number of neurons in hidden layer
+spec.num_hidden_units = 18 // number of neurons in hidden layer
 
 let env = {};
 
-env.getNumStates = () => 3;
-env.getMaxNumActions = () => 4;
+env.getNumStates = () => 9;
+env.getMaxNumActions = () => 5;
 
 let agent = new RL.DQNAgent(env, spec);
 
@@ -21,11 +21,11 @@ let second = false;
 
 let einzellerListe = [];
 window.setInterval(() => {
-    let s = [Einzeller, Fruchtfliegen, Fliegen]
+    let s = [Einzeller, Fruchtfliegen, Fliegen, fliegePrice, fruchtFliegePrice, simplyCellDivisionPrice, normalCellDivisionPrice, first, second]
     let action = agent.act(s);
 
     einzellerListe.push(Einzeller);
-    if (einzellerListe.length > 100) {
+    if (einzellerListe.length > 1000) {
         einzellerListe.shift();
     }
 
@@ -40,16 +40,17 @@ window.setInterval(() => {
             addFliege();
             break;
         case 3:
-            if (!first) {
+            if (!first && Einzeller >= 500) {
                 buySimplyCellDivision();
                 first = true;
             }
             break;
         case 4:
-            if(!second){
+            if(!second && Einzeller >= 2500){
                 buyNormalCellDivision();
                 second = true;
             }
+            break;
     }
 
     console.log(action);

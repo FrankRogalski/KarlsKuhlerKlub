@@ -51,7 +51,7 @@ function addFliege():void{
     }
 }
 
-// Diese function führt einfache Zellteilung ein und gewährt damit einen bonus von 0.01%.
+// Diese function führt einfache Zellteilung ein und gewährt damit einen bonus von 0.01.
 function buySimplyCellDivision():void{
     if(Einzeller >= simplyCellDivisionPrice){
         Einzeller -= simplyCellDivisionPrice;
@@ -62,12 +62,12 @@ function buySimplyCellDivision():void{
         bonusPercent += 0.01;
 
         let span = document.getElementById("bonusPercent");
-        span.innerHTML = bonusPercent.toString() + "%";
+        span.innerHTML = bonusPercent.toString();
     }
 }
 
 // Diese function verbessert die "einfache Zellteilung" auf einer normalen Zellteilung.
-// Dadurch wird der bonus um 0.01% erhöht.
+// Dadurch wird der bonus um 0.01 erhöht.
 function buyNormalCellDivision():void{
     if(Einzeller >= normalCellDivisionPrice){
         Einzeller -= normalCellDivisionPrice;
@@ -79,7 +79,7 @@ function buyNormalCellDivision():void{
         normalCellDivisionBought = true;
 
         let span = document.getElementById("bonusPercent");
-        span.innerHTML = bonusPercent.toString() + "%";
+        span.innerHTML = bonusPercent.toString();
     }
 }
 
