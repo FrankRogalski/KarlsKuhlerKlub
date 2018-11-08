@@ -15,26 +15,28 @@ function createFlowChart(){
         data: {
             labels: [],
             datasets: [
-                {label: "Einzeller Action",
-                borderColor: 'rgb(0, 180, 0)',
-                data: [0],
-            },
-            {label: "Fruchtfliege Action",
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0],
-        },
-            {label: "Fliegen Action",
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0],
-        },
-            {label: "Simply Celldivision Action",
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0],
-        },
-            {label: "Normal Celldivision Action",
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0],
-        }]
+                {
+                    label: "Einzeller Action",
+                    borderColor: 'rgb(0, 180, 0)',
+                    data: [0]
+                }, {
+                    label: "Fruchtfliege Action",
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [0]
+                }, {
+                    label: "Fliegen Action",
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [0]
+                }, {
+                    label: "Simply Celldivision Action",
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [0]
+                }, {
+                    label: "Normal Celldivision Action",
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [0]
+                }
+            ]
         },
         options: {
             responsive: false,
