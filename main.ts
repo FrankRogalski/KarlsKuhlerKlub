@@ -30,10 +30,14 @@ function addFruchtfliege():void{
         Einzeller -= fruchtFliegePrice;
         Fruchtfliegen++;
         EinzellerPerSeconds++;
+        fruchtFliegePrice *= 1.1;
 
         updateEinzeller();
         updateFruchtfliege();
         updateEinzellerPerSecond();
+
+        let button = document.getElementById("btnAddFruchtfliege");
+        button.setAttribute("value", `Verbinde Einzeller (${fruchtFliegePrice.toFixed(2)})`);
     }
 }
 
@@ -44,10 +48,14 @@ function addFliege():void{
         Einzeller -= fliegePrice;
         Fliegen++;
         EinzellerPerSeconds += 2;
+        fliegePrice *= 1.1;
 
         updateEinzeller();
         updateFliegen();
         updateEinzellerPerSecond();
+
+        let button = document.getElementById("btnAddFliege");
+        button.setAttribute("value", `Verbinde Einzeller (${fliegePrice.toFixed(2)})`);
     }
 }
 

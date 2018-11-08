@@ -1,4 +1,3 @@
- fliegePrice, fruchtFliegePrice, simplyCellDivisionPrice, normalCellDivisionPrice, first, second
 # Input
 * Anzahl Einzeller
 * Anzahl Fruchtgliegen
