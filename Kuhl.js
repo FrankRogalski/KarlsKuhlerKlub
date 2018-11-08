@@ -36,7 +36,10 @@ function createFlowChart(){
             data: [0],
         }]
         },
-        options: {}
+        options: {
+            responsive: false,
+            maintainAspectRatio: false
+        }
     });
     container.appendChild(canvas);
 }
