@@ -1,9 +1,6 @@
 // Chart logic.
-let countEinzellerActions = 0;
-let countFruchtfliegenActions = 0;
-let countFliegenActions = 0;
-let countSimplyDivisionActions = 0;
-let countNormalDivisionActions = 0;
+let secondCounter = 0;
+let counter = [0, 0, 0, 0, 0];
 
 let spec = {}
 spec.update = 'qlearn'; // qlearn | sarsa
@@ -37,33 +34,31 @@ window.setInterval(() => {
     switch (action) {
         case 0:
             addEinzeller();
-            countEinzellerActions++;
+            counter[0]++;
             break;
         case 1:
             addFruchtfliege();
-            countFruchtfliegenActions++;
+            counter[1]++;
             break;
         case 2:
             addFliege();
-            countFliegenActions++;
+            counter[2]++;
             break;
         case 3:
-            countSimplyDivisionActions++;
+            counter[3]++;
             if (!first && Einzeller >= 500) {
                 buySimplyCellDivision();
                 first = true;
             }
             break;
         case 4:
-            countNormalDivisionActions++;
+            counter[4]++;
             if(!second && Einzeller >= 2500){
                 buyNormalCellDivision();
                 second = true;
             }
             break;
     }
-
-    console.log(action);
 
     let oldAvg = 0
     for (let i = 0; i < einzellerListe.length >> 1; i++) {
