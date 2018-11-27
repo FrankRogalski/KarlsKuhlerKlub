@@ -22,15 +22,17 @@ let agent = new RL.DQNAgent(env, spec);
 let first = false;
 let second = false;
 
-let einzellerListe = [];
+//let einzellerListe = [];
+let oldEinzeller = 0;
 window.setInterval(() => {
     let s = [Einzeller, Fruchtfliegen, Fliegen, fliegePrice, fruchtFliegePrice, simplyCellDivisionPrice, normalCellDivisionPrice, first, second]
     let action = agent.act(s);
 
+    /*
     einzellerListe.push(Einzeller);
     if (einzellerListe.length > 1000)
         einzellerListe.shift();
-
+    */
     switch (action) {
         case 0:
             addEinzeller();
@@ -53,13 +55,14 @@ window.setInterval(() => {
             break;
         case 4:
             counter[4]++;
-            if(!second && Einzeller >= 2500){
+            if(!second && Einzeller >= 2500 && first){
                 buyNormalCellDivision();
                 second = true;
             }
             break;
     }
 
+    /*
     let oldAvg = 0
     for (let i = 0; i < einzellerListe.length >> 1; i++) {
         oldAvg += einzellerListe[i];
@@ -73,4 +76,8 @@ window.setInterval(() => {
     avg /= einzellerListe.length >> 1
 
     agent.learn(avg - oldAvg);
+    */
+
+   agent.learn(Math.max(Einzeller - oldEinzeller, 0));
+   oldEinzeller = Einzeller;
   }, 100);
